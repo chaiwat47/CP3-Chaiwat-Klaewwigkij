@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Chaiwat/Desktop/DataScientist/sql/chinook.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="4453"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainalbums"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="albums" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="300"/><column index="3" value="59"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">/* comment
+SELECT firstname, lastname, country
+FROM customers
+WHERE country = 'USA';
+*/
+-- comment
+
+-- 6.1 ดึงข้อมูลทุกคอลัมน์ของตาราง customers
+-- SELECT * FROM customers;
+
+-- 6.2 ดึงข้อมูลเฉพาะคอลัมน์ที่เราต้องการ
+/*
+SELECT
+	firstname,
+	lastname,
+	country,
+	email
+FROM customers;
+*/
+/*
+-- 6.3 กำหนดจำนวนแถวของ result set ด้วย LIMIT
+SELECT
+	firstname,
+	lastname,
+	country,
+	email
+FROM customers
+LIMIT 10;
+*/
+/*
+-- 6.4 ดูค่า DISTINCT VALUES ของคอลัมน์
+-- ดู unique ในคอลัมน์ที่เราต้องการทราบ
+SELECT DISTINCT country FROM customers
+*/
+/*
+-- 6.5 Merge คอลัมน์แบบ Text เข้าด้วยกัน
+SELECT
+	firstname,
+	lastname,
+	firstname ||' '|| lastname 
+FROM customers;
+*/
+
+-- 6.6 เปลี่ยนชื่อคอลัมน์ AS
+/*
+SELECT
+	firstname,
+	lastname,
+	firstname ||' ' || lastname AS fullname
+FROM customers;
+*/
+
+-- 6.7 บวก ลบ คูณ หาร ง่ายๆด้วย SELECT
+/*
+--SELECT 8 + 2;
+--SELECT 8 - 2;
+--SELECT 8 * 2;
+--SELECT 8 / 2;
+*/
+
+-- 6.8 Transform คอลัมน์ด้วยสูตรคณิตศาสตร์
+/*
+SELECT 
+		name,
+		bytes/(1024.0 * 1024.0) AS mb,
+		milliseconds / 60000.0 AS minutes
+FROM tracks;
+*/
+
+-- 6.9 สรุปการใช้งานที่สำคัญของ SELECT
+-- 1.ใช้ SELECT ดึงคอมลัมน์จาก TABLE / DATABASE
+-- 2.ใช้ SELECT DISTINCT เพื่อดึง unique values ออกมาจากคอลัมน์ที่เราต้องการ
+-- 3.ใช้ SELECT เป็นเครื่องคิดเลขได้
+-- 4.ใช้ SELECT สร้างคอลัมน์ใหม่
+-- 5.ใช้ || (pipe) merge หลายๆคอลัมน์ แบบ text เข้าด้วยกัน
+-- 6.ใช้ AS (ย่อมากจาก Alias) เพื่อเปลี่ยนชื่อคอลัมน์
+-- 7.ใช้ LIMIT ตามด้วย integer เพื่อกำหนดจำนวนแถวที่ต้องการดึงออกมาใน result set 
+-- 8. !!อย่าลืมตรวจ spelling ของชื่อคอลัมน์ คอมมาร์ และชื้อตารางก่อนรันคิวรี่		
+
+-- 7.1 การฟิลเตอร์พื้นฐานด้วย logical operators
+
+-- = is เท่ากับ
+-- &gt; is greater than
+-- &lt; is less than
+-- &gt;= is greater than or equal to 
+-- &lt;= is less than or equal to
+-- &lt;&gt; is not equal to
+/*
+SELECT * FROM customers 
+WHERE country &lt;&gt; 'USA';
+*/
+-- 7.2 การเขียนมากกว่าหนึ่งเงื่อนไขด้วย AND/OR
+	-- AND ทุกเงื่อนไขต้องเป็นจริงทั้งหมด (All True) SQL ถึงจะดึงข้อมูลกลับมาให้เรา
+	-- OR เงื่อนไขใดเงื่อนไข	หนึ่งเป็นจริง ก็ดึงข้อมูลได้แล้ว
+	-- การใช้ AND
+	-- ตัวอย่างต้องการดึงลูกค้าที่อยู่ในประเทศ USA และ อยู่ในรัฐ CA
+/*	
+SELECT * FROM customers 
+WHERE country = 'USA' AND state = 'CA';	
+*/
+	-- การใช้ OR
+	-- ตัวอย่างต้องการเขียน QUERY เพื่อถึงลูกค้าทั้ง สามประเทศนี้ USA, France or Belgium
+/*	
+SELECT * FROM customers
+WHERE country = 'USA' OR country = 'France' OR country = 'Belgium';
+*/
+--7.3 การเขียนเงื่อนไขด้วย IN	operator เมื่อใช้ or หลายๆครั้งสามารถใช่ IN () แล้วคลุมวงเล็บได้
+/*
+SELECT * FROM customers
+WHERE country IN ('USA', 'France', 'Belgium')
+*/
+--7.4 การเขียนเงื่อนไขแบบช่วงด้วย Between AND กำหนดฟิลเตอร์เป็นช่วงระหว่าง [a,b] เช่น
+/*
+SELECT * FROM invoices
+WHERE total BETWEEN 10 AND 20;
+*/
+-- เราสามารถเขียน between _ and _ กับข้อมูลแบบ int, real, text or datetime (incl,timestamp) ได้หมดเลย
+-- ต้องระบุเวลาให้ชัดเจน 'yyyy-mm-dd hh:mm:ss'
+/*
+SELECT * FROM invoices
+WHERE invoicedate BETWEEN '2010-01-01 00:00:00' AND '2010-01-31 23:59:59';
+*/
+--ถ้าวันที่ยังไม่อยู่ในรูปแบบมาตรฐานก่อนโดยใช้ function STRFTIME (บทที่9)
+/*
+SELECT * FROM invoices
+WHERE STRFTIME('%Y-%m', invoicedate) = '2010-01'; --เลือก invoice ที่ เดือน 1 ปี 2010
+*/
+--ใช้ Between _ and _ ด้วยชื่อคอลัมน์ธรรมดา โดยดึงช่วงคอลัมน์ระหว่าง a - b
+/*
+SELECT invoicedate, BillingCountry FROM invoices
+WHERE BillingCountry BETWEEN 'Australia' and 'Canada'
+*/
+--7.5การเขียนเงื่อนไขเพื่อหาค่า NULL (missing value)
+-- เลือก FirstName, LastName, Company จาก customers ที่มีค่า NULL
+/*
+SELECT FirstName, LastName, Company
+FROM customers
+WHERE Company IS NULL;
+*/
+--7.6การเขียนเงื่อนไขด้วย NOT
+--กรอง customers สำหรับบริษัทที่ไม่มีค่า Null (Not null)
+/*
+SELECT * FROM customers
+WHERE Company IS NOT NULL;
+*/
+-- NOT สามารถใช้คู่กับ NOT IN / NOT BETWEEN __ AND __
+
+-- not and logical operators
+/*
+SELECT * FROM customers
+WHERE NOT CustomerId &gt;= 5; 
+*/
+-- not and in
+/*
+SELECT * FROM customers
+WHERE Country NOT IN ('USA', 'France', 'Belgium');
+*/
+-- not and between  ไม่อยู่ในช่วงเหล่านี้
+/*
+SELECT * FROM invoices 
+WHERE InvoiceDate NOT BETWEEN '2010-01-01' AND '2010-01-31';
+*/
+--7.7การเขียนเงื่อนไขแบบ pattern matching
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
