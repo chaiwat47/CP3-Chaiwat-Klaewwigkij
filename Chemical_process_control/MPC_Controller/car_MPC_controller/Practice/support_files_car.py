@@ -96,9 +96,9 @@ class SupportFilesCar:
         y=(y_1+y_2)/2
 
         # Define y dimension for the lane change
-        #y=9*np.tanh(t-t[-1]/2)
+        y=9*np.tanh(t-t[-1]/2)
 
-        #y=-9*np.ones(len(t))
+        y=-9*np.ones(len(t))
 
         # Vector of x and y changes per sample time
         dx=x[1:len(x)]-x[0:len(x)-1]
