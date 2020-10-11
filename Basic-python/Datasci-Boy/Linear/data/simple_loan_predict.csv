@@ -1,0 +1,7 @@
+id,name,age,employed,own_house,credit
+101,Kob,middle,True,y,fair
+102,Cala,old,false,n,good
+103,Alex,old,TRUE,n,fair
+104,Tim,young,FALSE,y,fair
+105,Joy,middle,FALSE,n,fair
+106,Jib,middle,FALSE,y,excellent
