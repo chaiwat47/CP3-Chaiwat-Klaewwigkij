@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3139430-e6b3-41ca-a57e-17bfa5abb5e9" name="Default Changelist" comment="" />
+    <list default="true" id="a3139430-e6b3-41ca-a57e-17bfa5abb5e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Basic-python/Datasci-Boy/w03/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Basic-python/Datasci-Boy/w03/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Basic-python/Datasci-Boy/w03/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Basic-python/Datasci-Boy/w03/Untitled.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Basic-python/OOP/2.ClassVsContainer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Basic-python/OOP/2.ClassVsContainer.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MPC_control.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../MPC_control.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PID_Controller/GMC.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PID_Controller/GMC.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PID_Controller/PID_Tuning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PID_Controller/PID_Tuning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../My_Project/Road_to_data_sci/Final_Project/chefmoz_resturant/data_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../My_Project/Road_to_data_sci/Final_Project/chefmoz_resturant/data_analysis.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
