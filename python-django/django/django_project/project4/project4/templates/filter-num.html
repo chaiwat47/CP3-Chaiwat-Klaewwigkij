@@ -1,0 +1,17 @@
+<body>      
+    {% if hahaha|divisibleby:5%}
+        <div> ตัวแปร {{hahaha}} หารด้วย 5 ลงตัว </div>
+    {% endif %}
+    <hr>
+    {{ filesize }} => ขนาดของไฟล์: {{ filesize|filesizeformat }}<br>
+    <hr>
+    {{ num_int }} => {{num_int|floatformat}}<br>
+    {{num_int}} (0) => {{num_int|floatformat:0}}<br>
+    {{num_int}} (3) => {{num_int|floatformat:3}}<br>
+    <hr>
+    {{num_float}} => {{num_float|floatformat}}<br>
+    {{num_float}} (0)=> {{num_float|floatformat:0}}<br>
+    {{num_float}} (3)=> {{num_float|floatformat:3}}<br>
+</body>
+
+

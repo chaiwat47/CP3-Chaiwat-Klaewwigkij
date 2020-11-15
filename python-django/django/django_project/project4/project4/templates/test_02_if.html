@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title> Football </title>
+</head>
+<body>
+    <div>
+    {% if home_goals > guest_goals %}
+        ทีมเจ้าบ้านชนะ
+    {% elif home_goals < guest_goals %}
+        ทีมเยือนชนะ
+    {% else %}
+        เสมอกัน
+    {% endif %}
+    </div>
+</body>
+</html>

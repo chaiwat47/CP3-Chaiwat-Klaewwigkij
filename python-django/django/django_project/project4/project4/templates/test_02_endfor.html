@@ -1,0 +1,47 @@
+<div style="background: powderblue; padding: 5px">
+{% for _ in range %}
+    {% if forloop.first %}
+        <span style="font-weight: bold; color: gray">
+    {% else %}
+        <span style="font-weight: normal; color: blue">
+
+    {% endif %}
+    {% cycle 'Home' 'Products' 'Orders' 'Subscribe' 'Contact-Us' %}
+    </span>
+    {% if not forloop.last %}
+        |
+    {% endif %}
+
+{% endfor %}
+</div>
+
+<!-- Tag comment -->
+
+{# This is a single-line comment #}
+{% comment %}
+    This is
+    a multi-line
+    comment
+{% endcomment %}
+
+<!-- Tag Lorem Ipsum -->
+
+{% lorem 5 w %} <br>    {# lorem ipsum dolor sit amet #}
+{% lorem 10 w %} <br>    {# แสดง 10 คำ #}
+{% lorem 1 p %} <br>    {# แสดงข้อความ 1 ย่อหน้า #}
+{% lorem 3 p %} <br>    {# แสดงข้อความ 3 ย่อหน้า #}
+
+<!-- Tag with -->
+{# ถ้า list คือตัวแปรที่ส่งมาจาก views #}
+{% with a=10 b='Hello' c=1.23 d=list e=None f=False %}
+    a = {{a}} <br>
+    b = {{b}} <br>
+    d[1] = {{d.1}} <br>
+    {% if not f %}
+        {{f}} <br>
+    {% endif %}
+{% endwith %}
+
+a = {{a}} {#Error#}
+
+<!-- Tag url -->

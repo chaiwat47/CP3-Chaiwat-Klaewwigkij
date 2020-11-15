@@ -1,0 +1,98 @@
+<div> กรณีที่เป็นข้อมูลชนิด list </div>
+<!-- กรณีที่เป็นข้อมูลชนิด list -->
+<ul>
+{% for item in list%}
+    <li> {{item}} </li>
+{% endfor %}
+</ul>
+
+<div> กรณีที่เป็นข้อมูลชนิด list แบบจากด้านหลัง </div>
+<!-- กรณีที่เป็นข้อมูลชนิด list แบบจากด้านหลัง-->
+<ul>
+{% for item in list reversed%}
+    <li> {{item}} </li>
+{% endfor %}
+</ul>
+
+<div> กรณีที่เป็นข้อมูลชนิด range</div>
+<!-- กรณีที่เป็นข้อมูลชนิด range -->
+<ul>
+{% for x in range%}
+    <div> {{x}} </div>
+{% endfor %}
+</ul>
+
+<div> กรณีที่เป็นข้อมูลชนิด dict</div>
+<!-- กรณีที่เป็นข้อมูลชนิด dict -->
+<div> แสดงทั้ง key, value</div>
+<!-- แสดงทั้ง key, value -->
+<ul>
+{% for k, v in dict.items %}
+    <div> {{k}}: {{v}} </div>
+{% endfor %}
+</ul>
+
+<div> แสดง key</div>
+<!-- แสดง key -->
+<ul>
+{% for k in dict.keys %}
+    <div> {{k}} </div>
+{% endfor %}
+</ul>
+
+<div> แสดง value</div>
+<!-- แสดง value -->
+<ul>
+{% for v in dict.values %}
+    <div> {{v}} </div>
+{% endfor %}
+</ul>
+
+<div> กรณีที่เป็นข้อมูลชนิด empty</div>
+<!-- กรณีที่เป็นข้อมูลชนิด empty-->
+<ul>
+{% for x in empty_list %}
+    <div> {{x}} </div>
+    <!-- หากตัวแปร empty_list ไม่มีสมาชิก หรือไม่ได้ถูกส่งมาจาก views ให้แสดงผมสิ่งนี้-->
+    {% empty %}
+    <div> No item in list </div>
+{% endfor %}
+</ul>
+
+
+<div> กรณีที่เป็นข้อมูลชนิด cycle</div>
+<!-- กรณีที่เป็นข้อมูลชนิด cycle-->
+<ul>
+{% for _ in range %}
+    <li> {% cycle 'One' 'Two' 'Three' 'Four' 'Five' %} </li>
+{% endfor %}
+</ul>
+<div> loop-แรกจะแสดงคำว่า One, loop-สองจะแสดงคำว่า Two แล้ว Three, Four ตามลำดับ </div>
+
+<div> สำหรับตัวแปร forloop.counter </div>
+<ul>
+{% for x in list %}
+    <div> รายการที่ {{ forloop.counter}}: {{x}} </div>
+{% endfor %}
+</ul>
+
+<div> สำหรับตัวแปร forloop.counter0 </div>
+<ul>
+{% for x in list %}
+    <div> รายการที่ {{ forloop.counter0}}: {{x}} </div>
+{% endfor %}
+</ul>
+
+<div> สำหรับตัวแปร forloop.revcounter </div>
+<ul>
+{% for x in list %}
+    <div> รายการที่ {{ forloop.revcounter}}: {{x}} </div>
+{% endfor %}
+</ul>
+
+<div> สำหรับตัวแปร forloop.revcounter0 </div>
+<ul>
+{% for x in list %}
+    <div> รายการที่ {{ forloop.revcounter0}}: {{x}} </div>
+{% endfor %}
+</ul>

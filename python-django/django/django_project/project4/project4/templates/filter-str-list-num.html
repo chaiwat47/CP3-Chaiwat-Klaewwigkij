@@ -1,0 +1,15 @@
+{# มีตัวแปร data #}
+<body>
+    {{ var_xxx|default:1 }}<br>             {# 1 เพราะไม่มีตัวแปร var_xxx #}
+    {{ var_none|default_if_none:1}}<br>     {# 1 เพราะตัวแปรถ้า var_none =None #}
+    {{ var_int|add:1}}<br>                  {# 2476 #}
+    {{ var_int|add:1.9}}<br>                {# 2476 โดยตัดให้เหลือแค่จำนวนเต็ม #}
+    {{ var_float|add:10}}<br>               {# 13 โดยตัดให้เหลือจำนวนเต็ม #}
+
+    {% if var_str|length_is:0 %}
+        String is empty
+    {% else %}
+        Length: {{ var_str|length }}        {# Length: 11 #}
+    {% endif %}
+</body>
+

@@ -1,0 +1,15 @@
+<div>  autoescape on:</div>
+
+{% autoescape on %} {# แปลงอักขระพิเศษ (เฉพาะที่ส่งมาจากวิว) #}
+    <b> Hello </b>
+    {{ html_str }}
+
+{% endautoescape %}
+
+<hr>
+<div> autoescape off: </div>
+{% autoescape off%} {# ไม่แปลงอักขระพิเศษ #}
+    <b>Hello</b>
+    {{ html_str }}
+
+{% endautoescape %}
